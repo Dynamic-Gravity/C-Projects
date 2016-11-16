@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include "functions.h"
-using namespace std;
 
 lab11::lab11(){
 
@@ -20,27 +19,44 @@ lab11::~lab11(){
 void lab11::setKey(int k){
 	key = k;
 }
-void lab11::setArray(){
-
-}
 
 int lab11::getKey(){
-
+	return key;
 }
-std::vector<int>* lab11::getArray(){
+std::vector<int> lab11::getArray(){
+	return array;
+}
 
+void lab11::setArray(std::vector<int> a){
+	array = a;
 }
 
 void lab11::print_array( std::vector<int> array, int size ){
-	cout << "stored values: ";
-    for ( int i = 0; i < array.size(); i++ ){
-      cout << array[i] << " ";
+    for ( unsigned i = 0; i < array.size(); i++ ){
+      std::cout << array[i] << " ";
     }
-    cout << endl << endl;
+    std::cout << std::endl << std::endl;
 }
 
 void lab11::selection_sort( std::vector<int> array, int array_size ){
-
+	int i, j, min, temp;
+	for (i = 0; i < array_size-1; i++){
+		min = i;
+		for (j= i+1; j < array_size; j++){
+			if (array[j] < array[min]){
+				min = j;
+			}
+		}
+		if (min != i){
+			temp = array[i];
+			array[i] = array[min];
+			array[min] = temp;
+		}
+	}
+	for (int k = 0; k < array_size; k++){
+		std::cout << array[k] << " ";
+	}
+	std:: cout << std::endl;
 }
 
 int lab11::linear_search( std::vector<int> array, int array_size, int key ){
@@ -48,6 +64,15 @@ int lab11::linear_search( std::vector<int> array, int array_size, int key ){
 		if (array[i] == key){
 			return i;
 		}
-		return -1;
+	}
+	return -1;
+}
+
+int64_t lab11::factorial(int64_t n){
+	if(n <= 1){
+		return 1;
+	} else {
+		int64_t tmp = n * factorial(n-1);
+		return tmp;
 	}
 }
