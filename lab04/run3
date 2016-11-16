@@ -1,0 +1,42 @@
+
+Printing addresses:
+&c = 0x7ffc28da2c7f 
+&x = 0x7ffc28da2c78 
+&f = 0x7ffc28da2c74 
+&d = 0x7ffc28da2c68
+&cptr = 0x7ffc28da2c60 
+&xptr = 0x7ffc28da2c58 
+&fptr = 0x7ffc28da2c50 
+$dptr = 0x7ffc28da2c48
+
+Printing content:
+
+c = a,  cptr = 0x7ffc28da2c7f
+x = 25,  xptr = 0x7ffc28da2c78
+f = 7.54,  fptr = 0x7ffc28da2c74
+d = 297.84,  dptr = 0x7ffc28da2c68
+
+Printing val and *val:
+c = a,  *cptr = a
+x = 25,  *xptr = 25
+f = 7.537000,  *fptr = 7.537000
+d = 297.84,  *dptr = 297.84
+
+Printing modified values:
+c = a,  *cptr = a
+x = 25,  *xptr = 25
+d = 297.84,  *dptr = 297.84
+
+*xptr = 26,  xptr = 0x7ffc28da2c78
+
+pointers before increment:
+cptr = 0x7ffc28da2c7f
+xptr = 0x7ffc28da2c78
+fptr = 0x7ffc28da2c74
+dptr = 0x7ffc28da2c68
+
+pointers after increment:
+cptr = 0x7ffc28da2c80
+xptr = 0x7ffc28da2c7c
+fptr = 0x7ffc28da2c78
+dptr = 0x7ffc28da2c70
